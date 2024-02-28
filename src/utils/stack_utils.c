@@ -6,7 +6,7 @@
 /*   By: asalo <asalo@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 21:36:36 by asalo             #+#    #+#             */
-/*   Updated: 2024/02/26 13:12:03 by asalo            ###   ########.fr       */
+/*   Updated: 2024/02/28 09:25:57 by asalo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ t_stack_node	*find_last_node(t_stack_node *stack)
 	return (stack);
 }
 
-void	append_node(t_stack_node **stack, int nbr)
+void	append_node(t_stack_node **stack, int n)
 {
 	t_stack_node	*node;
 	t_stack_node	*last_node;
@@ -32,7 +32,7 @@ void	append_node(t_stack_node **stack, int nbr)
 	if (NULL == node)
 		return ;
 	node->next = NULL;
-	node->value = nbr;
+	node->value = n;
 	if (NULL == *stack)
 	{
 		*stack = node;

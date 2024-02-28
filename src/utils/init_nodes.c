@@ -6,7 +6,7 @@
 /*   By: asalo <asalo@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 20:26:48 by asalo             #+#    #+#             */
-/*   Updated: 2024/02/26 13:11:40 by asalo            ###   ########.fr       */
+/*   Updated: 2024/02/28 08:25:01 by asalo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,7 @@ void	set_current_position(t_stack_node *stack)
 	}
 }
 
-static void	set_target_node(t_stack_node *a,
-							t_stack_node *b)
+static void	set_target_node(t_stack_node *a, t_stack_node *b)
 {
 	t_stack_node	*current_a;
 	t_stack_node	*target_node;
@@ -64,20 +63,20 @@ static void	set_target_node(t_stack_node *a,
 
 void	set_price(t_stack_node *a, t_stack_node *b)
 {
-	int	len_a;
-	int	len_b;
+	int	a_len;
+	int	b_len;
 
-	len_a = stack_len(a);
-	len_b = stack_len(b);
+	a_len = stack_len(a);
+	b_len = stack_len(b);
 	while (b)
 	{
 		b->push_cost = b->current_index;
 		if (!(b->above_median))
-			b->push_cost = len_b - (b->current_index);
+			b->push_cost = b_len - (b->current_index);
 		if (b->target_node->above_median)
 			b->push_cost += b->target_node->current_index;
 		else
-			b->push_cost += len_a - (b->target_node->current_index);
+			b->push_cost += a_len - (b->target_node->current_index);
 		b = b->next;
 	}
 }

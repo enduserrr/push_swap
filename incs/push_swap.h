@@ -6,17 +6,21 @@
 /*   By: asalo <asalo@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 11:02:56 by asalo             #+#    #+#             */
-/*   Updated: 2024/02/27 09:36:09 by asalo            ###   ########.fr       */
+/*   Updated: 2024/02/28 09:15:27 by asalo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include <stdlib.h> /*MALLOC & STDEFS*/
-# include <limits.h> /*INT MIN & MAX*/
-# include <stdbool.h> /*BOOLEAN*/
-# include <unistd.h> /*WRITE*/
+# include <stdlib.h>
+/*MALLOC & STDEFS*/
+# include <limits.h>
+/*INT MIN & MAX*/
+# include <stdbool.h>
+/*BOOLEAN*/
+# include <unistd.h>
+/*WRITE*/
 
 typedef struct s_stack_node
 {
@@ -37,8 +41,8 @@ void			sort(t_stack_node **a, t_stack_node **b);
 /*** Errors and free ***/
 void			error_free(t_stack_node **a);
 void			free_stack(t_stack_node **stack);
-int				error_repetition(t_stack_node *a, int nbr);
-int				error_syntax(char *str_nbr);
+int				error_repetition(t_stack_node *a, int n);
+int				error_syntax(char *strn);
 
 /*** Stack ***/
 char			**split(char *str, char sep);
@@ -49,7 +53,7 @@ void			set_price(t_stack_node *a, t_stack_node *b);
 void			set_cheapest(t_stack_node *b);
 
 /*** Linked list ***/
-void			append_node(t_stack_node **stack, int nbr);
+void			append_node(t_stack_node **stack, int n);
 t_stack_node	*find_last_node(t_stack_node *head);
 t_stack_node	*find_smallest(t_stack_node *stack);
 t_stack_node	*return_cheapest(t_stack_node *stack);

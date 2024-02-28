@@ -6,7 +6,7 @@
 /*   By: asalo <asalo@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 19:27:07 by asalo             #+#    #+#             */
-/*   Updated: 2024/02/26 13:13:54 by asalo            ###   ########.fr       */
+/*   Updated: 2024/02/28 09:21:01 by asalo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,38 +30,33 @@ void	free_stack(t_stack_node **stack)
 	while (current)
 	{
 		tmp = current->next;
-		current->value = 0;
 		free(current);
 		current = tmp;
 	}
 	*stack = NULL;
 }
 
-int	error_syntax(char *str_nbr)
+int	error_syntax(char *strn)
 {
-	if (!(*str_nbr == '+'
-			|| *str_nbr == '-'
-			|| (*str_nbr >= '0' && *str_nbr <= '9')))
+	if (!(*strn == '+' || *strn == '-' || (*strn >= '0' && *strn <= '9')))
 		return (1);
-	if ((*str_nbr == '+'
-			|| *str_nbr == '-')
-		&& !(str_nbr[1] >= '0' && str_nbr[1] <= '9'))
+	if ((*strn == '+' || *strn == '-') && !(strn[1] >= '0' && strn[1] <= '9'))
 		return (1);
-	while (*++str_nbr)
+	while (*++strn)
 	{
-		if (!(*str_nbr >= '0' && *str_nbr <= '9'))
+		if (!(*strn >= '0' && *strn <= '9'))
 			return (1);
 	}
 	return (0);
 }
 
-int	error_repetition(t_stack_node *a, int nbr)
+int	error_repetition(t_stack_node *a, int n)
 {
 	if (a == NULL)
 		return (0);
 	while (a)
 	{
-		if (a->value == nbr)
+		if (a->value == n)
 			return (1);
 		a = a->next;
 	}

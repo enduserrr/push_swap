@@ -6,7 +6,7 @@
 /*   By: asalo <asalo@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 13:18:24 by asalo             #+#    #+#             */
-/*   Updated: 2024/02/26 13:10:29 by asalo            ###   ########.fr       */
+/*   Updated: 2024/02/28 09:26:30 by asalo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,7 @@ static void	handle_five(t_stack_node **a, t_stack_node **b)
 	}
 }
 
-static void	rotate_both(t_stack_node **a,
-						t_stack_node **b,
+static void	rotate_both(t_stack_node **a, t_stack_node **b,
 						t_stack_node *cheapest_node, bool checker)
 {
 	if (checker == true)
@@ -44,9 +43,8 @@ static void	rotate_both(t_stack_node **a,
 	}
 }
 
-void	finish_rotation(t_stack_node **stack,
-							t_stack_node *top_node,
-							char stack_name)
+void	finish_rotation(t_stack_node **stack, t_stack_node *top_node,
+						char stack_name)
 {
 	while (*stack != top_node)
 	{
