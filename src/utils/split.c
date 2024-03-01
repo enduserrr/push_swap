@@ -6,7 +6,7 @@
 /*   By: asalo <asalo@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 15:04:02 by asalo             #+#    #+#             */
-/*   Updated: 2024/02/28 09:23:03 by asalo            ###   ########.fr       */
+/*   Updated: 2024/03/01 09:52:07 by asalo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ char	**split(char *str, char sep)
 	i = 0;
 	w_count = count_words(str, sep);
 	if (!w_count)
-		exit(1);
+		exit (1);
 	new = malloc(sizeof(char *) * (size_t)(w_count + 2));
 	if (new == NULL)
 		return (NULL);

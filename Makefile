@@ -2,6 +2,9 @@ NAME		= push_swap
 SRC_DIR		= src
 OBJ_DIR		= obj
 SUB_DIR		= sort utils
+BONUS		= checker
+BONUS_SRC	= bonus
+BONUS_OBJ	= obj_bonus
 
 SRCS		= $(addprefix $(SRC_DIR)/sort/, p.c rr.c r.c s.c sort.c sort_three.c) \
 				$(addprefix $(SRC_DIR)/utils/, split.c stack_utils.c error_free.c \
@@ -30,6 +33,5 @@ fclean:		clean
 			$(RM) $(NAME)
 
 re:			fclean all
-
 
 .PHONY:		all clean fclean re
