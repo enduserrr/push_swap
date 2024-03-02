@@ -6,7 +6,7 @@
 /*   By: asalo <asalo@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 15:04:02 by asalo             #+#    #+#             */
-/*   Updated: 2024/03/01 09:52:07 by asalo            ###   ########.fr       */
+/*   Updated: 2024/03/02 10:46:18 by asalo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,5 +88,3 @@ char	**split(char *str, char sep)
 	new[i] = NULL;
 	return (new);
 }
-/*	"continue ;" is a jump statement, not a function, i.e. it's standard C	*/
-/*	"continnue ;" is used to go back to the start of the loop.				*/

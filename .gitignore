@@ -2,3 +2,6 @@ checker_Mac
 .DS_Store
 Readme.md
 .tester
+tester
+push_swap_test.sh
+traces.txt
